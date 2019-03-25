@@ -8,7 +8,7 @@ const MovieList = ({ movies }) => {
   return (
     <ul className={styles.list}>
       {movies.map(movie => (
-        <Movie key={movie.title} movie={movie} />
+        <Movie key={movie._id} movie={movie} />
       ))}
     </ul>
   )

@@ -3,8 +3,8 @@ import { css } from 'glamor'
 export default {
   list: css({
     display: 'grid',
-    gridRowGap: '20px',
-    gridTemplateColumns: '18% 18% 18% 18% 18%',
+    gridGap: '20px',
+    gridTemplateColumns: 'repeat(auto-fill, 600px)',
     justifyContent: 'space-between',
     marginTop: '20px'
   })
