@@ -6,7 +6,8 @@ export default {
     backgroundColor: '#ffffff',
     border: '1px solid #cccccc',
     display: 'flex',
-    padding: '10px'
+    padding: '10px',
+    position: 'relative'
   }),
   info: css({
     padding: '0 10px'
@@ -27,6 +28,6 @@ export default {
     objectFit: 'contain'
   }),
   synopsis: css({
-    margin: '10px 0'
+    marginTop: '10px'
   })
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Rating from '../Rating'
+
 import styles from './Movie.style'
 
 const Movie = ({ movie }) => {
@@ -25,6 +27,8 @@ const Movie = ({ movie }) => {
           </span>
         </div>
         <p className={styles.synopsis}>{movie.synopsis}</p>
+
+        <Rating />
       </div>
     </li>
   )
