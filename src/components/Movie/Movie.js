@@ -1,4 +1,5 @@
 import React from 'react'
+import { css } from 'glamor'
 
 import Rating from '../Rating'
 
@@ -6,7 +7,7 @@ import styles from './Movie.style'
 
 const Movie = ({ movie }) => {
   return (
-    <li className={styles.container}>
+    <li {...css(styles.container)}>
       <img
         className={styles.image}
         src={movie.poster}

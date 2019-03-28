@@ -2,7 +2,7 @@ import { css } from 'glamor'
 
 export default {
   container: css({
-    bottom: '20px',
+    bottom: '10px',
     display: 'flex',
     position: 'absolute',
     right: '10px'

@@ -4,18 +4,34 @@ export default {
   container: css({
     alignItems: 'flex-start',
     backgroundColor: '#ffffff',
-    border: '1px solid #cccccc',
+    border: '2px solid #ddd',
     display: 'flex',
-    padding: '10px',
     position: 'relative'
   }),
+  watched: css({
+    border: '2px solid var(--main-color-green)',
+    '&::after': {
+      alignItems: 'center',
+      backgroundColor: 'var(--main-color-green)',
+      color: '#fff',
+      content: '✔️',
+      display: 'flex',
+      fontSize: '24px',
+      height: '42px',
+      justifyContent: 'center',
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      width: '42px'
+    }
+  }),
   info: css({
-    padding: '0 10px'
+    padding: '15px'
   }),
   title: css({
     borderBottom: '1px solid #eeeeee',
     fontSize: '18px',
-    paddingBottom: '5px'
+    padding: '0 40px 5px 0'
   }),
   infoItems: css({
     display: 'flex',
