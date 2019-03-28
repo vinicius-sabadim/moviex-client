@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+import Header from './components/Header'
 import MovieList from './components/MovieList'
 import Search from './components/Search'
 
@@ -31,7 +32,7 @@ const App = () => {
 
   return (
     <div className={styles.app}>
-      <h1 className={styles.title}>MovieX</h1>
+      <Header />
       <Search isSearching={isSearching} onSearch={fetchMovies} />
       <MovieList movies={movies} />
     </div>
