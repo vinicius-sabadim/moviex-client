@@ -8,10 +8,6 @@ import styles from './Rating.styles'
 const Rating = () => {
   const [showPopup, setShowPopup] = useState(false)
 
-  const togglePopup = () => {
-    setShowPopup(!showPopup)
-  }
-
   return (
     <div className={styles.container}>
       <div className={styles.block}>
@@ -25,14 +21,14 @@ const Rating = () => {
         id="rate-this-toggle"
         className={styles.block}
         style={{ borderLeft: '1px solid #ccc', cursor: 'pointer' }}
-        onClick={togglePopup}
+        onClick={() => setShowPopup(true)}
       >
         <Star color='#ccc' />
         <div className={styles.rateContainer}>
           <span className={styles.total}>Rate this</span>
         </div>
       </div>
-      {showPopup && <RatingPopup />}
+      {showPopup && <RatingPopup onCancel={() => setShowPopup(false)} />}
     </div>
   )
 }
