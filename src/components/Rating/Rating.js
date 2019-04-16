@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import RatingPopup from './RatingPopup'
-import Star from './Star'
+import Star from '../Star'
 
 import styles from './Rating.styles'
 

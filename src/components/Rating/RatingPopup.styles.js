@@ -9,6 +9,6 @@ export default {
     right: '5px',
     textAlign: 'center',
     top: '-50px',
-    width: '300px'
+    width: '360px'
   })
 }
