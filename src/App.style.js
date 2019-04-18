@@ -1,7 +1,10 @@
 import { css } from 'glamor'
 
 export default {
-  app: css({
-    margin: '20px'
+  center: css({
+    alignItems: 'center',
+    display: 'flex',
+    height: '100vh',
+    justifyContent: 'center'
   })
 }

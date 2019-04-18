@@ -1,42 +1,55 @@
 import React, { useState, useEffect } from 'react'
 
-import Header from './components/Header'
-import MovieList from './components/MovieList'
-import Search from './components/Search'
+import Home from './components/Home'
+import Login from './components/Login'
 
 import styles from './App.style'
 
-const useMovies = () => {
-  const [isSearching, setSearching] = useState(false)
-  const [movies, setMovies] = useState([])
+const App = () => {
+  const [isInitialized, setIsInitialized] = useState(false)
+  const [isLogged, setIsLogged] = useState(false)
+  const [user, setUser] = useState({})
 
-  const fetchMovies = async (term = '') => {
-    setSearching(true)
-    const res = await fetch(
-      `http://localhost:5000/api/movies?search=${term.replace(' ', '+')}`
-    )
-    const data = await res.json()
-    setMovies(data)
-    setSearching(false)
+  const handleLogin = user => {
+    localStorage.setItem('token', user.token)
+    setUser(user)
+    setIsLogged(true)
   }
 
   useEffect(() => {
-    fetchMovies()
+    const token = localStorage.getItem('token')
+    if (!token) {
+      setIsInitialized(true)
+      setIsLogged(false)
+    } else {
+      setIsInitialized(true)
+      setIsLogged(true)
+    }
   }, [])
 
-  return { isSearching, movies, fetchMovies }
-}
-
-const App = () => {
-  const { isSearching, movies, fetchMovies } = useMovies()
+  if (!isInitialized) {
+    return (
+      <div className={styles.center}>
+        <Loading />
+      </div>
+    )
+  }
 
   return (
-    <div className={styles.app}>
-      <Header />
-      <Search isSearching={isSearching} onSearch={fetchMovies} />
-      <MovieList movies={movies} />
+    <div>
+      {isLogged ? (
+        <Home user={user} />
+      ) : (
+        <div className={styles.center}>
+          <Login onLogin={handleLogin} />
+        </div>
+      )}
     </div>
   )
+}
+
+const Loading = () => {
+  return <i className="fas fa-spin fa-spinner" />
 }
 
 export default App
