@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import Home from './components/Home'
-import Login from './components/Login'
+import Home from './pages/Home'
+import Login from './pages/Login'
 
 import styles from './App.style'
 
@@ -14,6 +14,12 @@ const App = () => {
     localStorage.setItem('token', user.token)
     setUser(user)
     setIsLogged(true)
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    setUser({})
+    setIsLogged(false)
   }
 
   useEffect(() => {
@@ -38,7 +44,7 @@ const App = () => {
   return (
     <div>
       {isLogged ? (
-        <Home user={user} />
+        <Home user={user} onLogout={handleLogout} />
       ) : (
         <div className={styles.center}>
           <Login onLogin={handleLogin} />

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-import Header from '../Header'
-import MovieList from '../MovieList'
-import Search from '../Search'
+import Header from '../../components/Header'
+import MovieList from '../../components/MovieList'
+import Search from '../../components/Search'
 
 import styles from './Home.styles'
 
@@ -12,8 +12,8 @@ const useMovies = () => {
   const [movies, setMovies] = useState([])
 
   const fetchMovies = async (term = '') => {
-    const token = localStorage.getItem('token')
     setSearching(true)
+    const token = localStorage.getItem('token')
     const { data } = await axios.get(
       `http://localhost:5000/api/movies?search=${term.replace(' ', '+')}`,
       {
@@ -33,14 +33,16 @@ const useMovies = () => {
   return { isSearching, movies, fetchMovies }
 }
 
-const Home = () => {
+const Home = ({ onLogout }) => {
   const { isSearching, movies, fetchMovies } = useMovies()
 
   return (
-    <div className={styles.container}>
-      <Header />
-      <Search isSearching={isSearching} onSearch={fetchMovies} />
-      <MovieList movies={movies} />
+    <div className="app">
+      <Header onLogout={onLogout} />
+      <div className={styles.container}>
+        <Search isSearching={isSearching} onSearch={fetchMovies} />
+        <MovieList movies={movies} />
+      </div>
     </div>
   )
 }

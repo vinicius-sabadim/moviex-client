@@ -2,25 +2,24 @@ import { css } from 'glamor'
 
 export default {
   container: css({
+    backgroundColor: '#fcfcfc',
+    borderBottom: '1px solid #ccc',
     display: 'flex',
     justifyContent: 'space-between',
-    marginBottom: '20px'
+    padding: '10px 20px',
+    position: 'relative'
   }),
   title: css({
     color: 'var(--main-color)'
   }),
   user: css({
     alignItems: 'center',
+    cursor: 'pointer',
     display: 'flex'
-  }),
-  photo: css({
-    borderRadius: '50%',
-    height: '50px',
-    width: '50px'
   }),
   userName: css({
     color: 'var(--main-color)',
     fontSize: '18px',
-    marginLeft: '5px'
+    margin: '0 5px'
   })
 }

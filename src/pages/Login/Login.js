@@ -6,6 +6,7 @@ import styles from './Login.styles'
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const [hasError, setHasError] = useState(false)
 
   const handleLogin = async e => {
@@ -22,8 +23,9 @@ const Login = ({ onLogin }) => {
       )
       const { user } = data
       onLogin(user)
-    } catch {
+    } catch ({ response }) {
       setHasError(true)
+      setErrorMessage(response.data.errors)
     }
   }
 
@@ -55,7 +57,7 @@ const Login = ({ onLogin }) => {
           Login
         </button>
       </form>
-      {hasError && <p className={styles.error}>There was an error on your request, try again.</p>}
+      {hasError && <p className={styles.error}>{errorMessage}</p>}
     </div>
   )
 }
