@@ -14,16 +14,18 @@ const useMovies = () => {
   const fetchMovies = async (term = '') => {
     setSearching(true)
     const token = localStorage.getItem('token')
-    const { data } = await axios.get(
-      `http://localhost:5000/api/movies?search=${term.replace(' ', '+')}`,
-      {
-        headers: {
-          Authorization: `Token ${token}`
+    try {
+      const { data } = await axios.get(
+        `http://localhost:5000/api/movies?search=${term.replace(' ', '+')}`,
+        {
+          headers: {
+            Authorization: `Token ${token}`
+          }
         }
-      }
-    )
-    setMovies(data)
-    setSearching(false)
+      )
+      setMovies(data)
+      setSearching(false)
+    } catch {}
   }
 
   useEffect(() => {

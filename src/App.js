@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -21,6 +22,18 @@ const App = () => {
     setUser({})
     setIsLogged(false)
   }
+
+  axios.interceptors.response.use(
+    response => {
+      return response
+    },
+    error => {
+      if (error.response.status === 403) {
+        handleLogout()
+      }
+      return Promise.reject(error)
+    }
+  )
 
   useEffect(() => {
     const token = localStorage.getItem('token')
