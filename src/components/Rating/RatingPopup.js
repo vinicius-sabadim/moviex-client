@@ -4,8 +4,12 @@ import Star from '../Star'
 
 import styles from './RatingPopup.styles'
 
-const RatingPopup = ({ onCancel }) => {
+const RatingPopup = ({ onCancel, onSave }) => {
   const [rate, setRate] = useState(6)
+
+  const onSaveClicked = () => {
+    onSave(rate)
+  }
 
   return (
     <div className={styles.container}>
@@ -21,7 +25,9 @@ const RatingPopup = ({ onCancel }) => {
         />
       ))}
       <div className={styles.buttonContainer}>
-        <button className={styles.buttonSave}>Save</button>
+        <button className={styles.buttonSave} onClick={onSaveClicked}>
+          Save
+        </button>
         <button className={styles.buttonCancel} onClick={onCancel}>
           Cancel
         </button>

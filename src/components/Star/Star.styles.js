@@ -5,7 +5,7 @@ export default {
     transition: 'all .2s',
     '&:hover': {
       cursor: 'pointer',
-      transform: 'scale(1.3)'
+      transform: 'scale(1.2)'
     }
   })
 }

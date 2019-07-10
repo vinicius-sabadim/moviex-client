@@ -8,10 +8,15 @@ import styles from './Rating.styles'
 const Rating = () => {
   const [showPopup, setShowPopup] = useState(false)
 
+  const handleSave = rate => {
+    console.log(rate)
+    setShowPopup(false)
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.block}>
-        <Star color='#FCCA46' />
+        <Star color="#FCCA46" />
         <div className={styles.rateContainer}>
           <span className={styles.rating}>9.8</span>
           <span className={styles.total}>146</span>
@@ -23,12 +28,14 @@ const Rating = () => {
         style={{ borderLeft: '1px solid #ccc', cursor: 'pointer' }}
         onClick={() => setShowPopup(true)}
       >
-        <Star color='#ccc' />
+        <Star color="#ccc" />
         <div className={styles.rateContainer}>
           <span className={styles.total}>Rate this</span>
         </div>
       </div>
-      {showPopup && <RatingPopup onCancel={() => setShowPopup(false)} />}
+      {showPopup && (
+        <RatingPopup onCancel={() => setShowPopup(false)} onSave={handleSave} />
+      )}
     </div>
   )
 }
