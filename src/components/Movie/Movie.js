@@ -3,20 +3,20 @@ import { css } from 'glamor'
 
 import Rating from '../Rating'
 
-import styles from './Movie.style'
+import './Movie.css'
 
 const Movie = ({ movie }) => {
   return (
-    <li {...css(styles.container)}>
+    <li className="movie__container">
       <img
-        className={styles.image}
+        className="movie__image"
         src={movie.poster}
         alt={`Poster for ${movie.title}`}
       />
 
-      <div className={styles.info}>
-        <h2 className={styles.title}>{movie.title}</h2>
-        <div className={styles.infoItems}>
+      <div className="movie__info">
+        <h2 className="movie__title">{movie.title}</h2>
+        <div className="movie__items">
           <span>
             <strong>Year:</strong> {movie.year}
           </span>
@@ -27,7 +27,7 @@ const Movie = ({ movie }) => {
             <strong>Genre:</strong> {movie.genre.join(', ')}
           </span>
         </div>
-        <p className={styles.synopsis}>{movie.synopsis}</p>
+        <p className="movie__synopsis">{movie.synopsis}</p>
 
         <Rating />
       </div>

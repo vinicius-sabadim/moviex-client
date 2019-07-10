@@ -1,0 +1,12 @@
+.movieList__container {
+  display: grid;
+  grid-gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  .movieList__container {
+    grid-template-columns: repeat(auto-fill, 600px);
+  }
+}
