@@ -1,9 +1,12 @@
 import React from 'react'
-import { css } from 'glamor'
 
 import Rating from '../Rating'
 
 import './Movie.css'
+
+const getGenres = genres => {
+  return genres.map(genre => genre.name).join(', ')
+}
 
 const Movie = ({ movie }) => {
   return (
@@ -24,7 +27,7 @@ const Movie = ({ movie }) => {
             <strong>Duration:</strong> {movie.duration}
           </span>
           <span>
-            <strong>Genre:</strong> {movie.genre.join(', ')}
+            <strong>Genre:</strong> {getGenres(movie.genre)}
           </span>
         </div>
         <p className="movie__synopsis">{movie.synopsis}</p>
