@@ -10,10 +10,8 @@ export default {
   block: css({
     alignItems: 'center',
     display: 'flex',
-    padding: '0 10px'
-  }),
-  star: css({
-    fontSize: '24px'
+    padding: '0 10px',
+    position: 'relative'
   }),
   rateContainer: css({
     marginLeft: '8px',

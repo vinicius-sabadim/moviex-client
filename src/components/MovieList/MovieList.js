@@ -2,11 +2,11 @@ import React from 'react'
 
 import Movie from '../Movie'
 
-import styles from './MovieList.style'
+import './MovieList.css'
 
 const MovieList = ({ movies }) => {
   return (
-    <ul className={styles.list}>
+    <ul className="movieList__container">
       {movies.map(movie => (
         <Movie key={movie._id} movie={movie} />
       ))}

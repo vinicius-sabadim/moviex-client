@@ -2,19 +2,19 @@ import React, { useState } from 'react'
 
 import UserOptions from '../UserOptions'
 
-import styles from './Header.styles'
+import './Header.css'
 
 const Header = ({ onLogout }) => {
   const [isUserOptionsOpened, setUserOptionsOpened] = useState(false)
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>MovieX</h1>
+    <div className="header__container">
+      <h1 className="header__title">MovieX</h1>
       <div
-        className={styles.user}
+        className="header__user"
         onClick={() => setUserOptionsOpened(!isUserOptionsOpened)}
       >
-        <span className={styles.userName}>Vinicius</span>
+        <span className="header__userName">Vinicius</span>
         <i className="fa fa-caret-down" />
       </div>
       {isUserOptionsOpened && <UserOptions onLogout={onLogout} />}
