@@ -5,8 +5,6 @@ import Header from '../../components/Header'
 import MovieList from '../../components/MovieList'
 import Search from '../../components/Search'
 
-import styles from './Home.styles'
-
 const useMovies = () => {
   const [isSearching, setSearching] = useState(false)
   const [movies, setMovies] = useState([])
@@ -41,10 +39,8 @@ const Home = ({ onLogout }) => {
   return (
     <div className="app">
       <Header onLogout={onLogout} />
-      <div className={styles.container}>
-        <Search isSearching={isSearching} onSearch={fetchMovies} />
-        <MovieList movies={movies} />
-      </div>
+      <Search isSearching={isSearching} onSearch={fetchMovies} />
+      <MovieList movies={movies} />
     </div>
   )
 }
