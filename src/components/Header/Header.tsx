@@ -4,7 +4,7 @@ import UserOptions from '../UserOptions'
 
 import './Header.css'
 
-const Header = ({ onLogout }) => {
+const Header = ({ user, onLogout }) => {
   const [isUserOptionsOpened, setUserOptionsOpened] = useState(false)
 
   return (

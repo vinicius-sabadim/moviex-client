@@ -33,12 +33,12 @@ const useMovies = () => {
   return { isSearching, movies, fetchMovies }
 }
 
-const Home = ({ onLogout }) => {
+const Home = ({ user, onLogout }) => {
   const { isSearching, movies, fetchMovies } = useMovies()
 
   return (
     <div className="app">
-      <Header onLogout={onLogout} />
+      <Header user={user} onLogout={onLogout} />
       <Search isSearching={isSearching} onSearch={fetchMovies} />
       <MovieList movies={movies} />
     </div>
