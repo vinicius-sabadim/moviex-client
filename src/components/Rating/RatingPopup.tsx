@@ -2,10 +2,17 @@ import React, { useState } from 'react'
 
 import Star from '../Star'
 
+import Rate from '../../types/Rate'
+
 import './RatingPopup.css'
 
-const RatingPopup = ({ onCancel, onSave }) => {
-  const [rate, setRate] = useState(6)
+interface RatingPopupProps {
+  onCancel(): void
+  onSave(rate: Rate): void
+}
+
+const RatingPopup: React.SFC<RatingPopupProps> = ({ onCancel, onSave }) => {
+  const [rate, setRate] = useState<Rate>(6)
 
   const onSaveClicked = () => {
     onSave(rate)

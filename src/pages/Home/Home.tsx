@@ -5,9 +5,12 @@ import Header from '../../components/Header'
 import MovieList from '../../components/MovieList'
 import Search from '../../components/Search'
 
+import Movie from '../../types/Movie'
+import User from '../../types/User'
+
 const useMovies = () => {
   const [isSearching, setSearching] = useState(false)
-  const [movies, setMovies] = useState([])
+  const [movies, setMovies] = useState<Movie[] | []>([])
 
   const fetchMovies = async (term = '') => {
     setSearching(true)
@@ -33,7 +36,12 @@ const useMovies = () => {
   return { isSearching, movies, fetchMovies }
 }
 
-const Home = ({ user, onLogout }) => {
+interface HomeProps {
+  user: User
+  onLogout(): void
+}
+
+const Home: React.SFC<HomeProps> = ({ user, onLogout }) => {
   const { isSearching, movies, fetchMovies } = useMovies()
 
   return (

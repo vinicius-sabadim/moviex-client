@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 import RatingPopup from './RatingPopup'
 import Star from '../Star'
 
+import Rate from '../../types/Rate'
+
 import './Rating.css'
 
 const Rating = () => {
   const [showPopup, setShowPopup] = useState(false)
 
-  const handleSave = rate => {
+  const handleSave = (rate: Rate) => {
     console.log(rate)
     setShowPopup(false)
   }

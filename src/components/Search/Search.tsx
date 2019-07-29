@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 
 import './Search.css'
 
-const Search = ({ isSearching, onSearch }) => {
+interface SearchProps {
+  isSearching: boolean
+  onSearch(term: string): void
+}
+
+const Search: React.SFC<SearchProps> = ({ isSearching, onSearch }) => {
   const [term, setTerm] = useState('')
 
-  const handleSubmit = event => {
+  const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault()
     onSearch(term)
   }

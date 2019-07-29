@@ -4,6 +4,8 @@ import axios from 'axios'
 import Home from './pages/Home'
 import Login from './pages/Login'
 
+import User from './types/User'
+
 import './App.css'
 
 const App = () => {
@@ -11,8 +13,8 @@ const App = () => {
   const [isLogged, setIsLogged] = useState(false)
   const [user, setUser] = useState({})
 
-  const handleLogin = user => {
-    localStorage.setItem('token', user.token)
+  const handleLogin = (user: User) => {
+    localStorage.setItem('token', JSON.stringify(user.token))
     setUser(user)
     setIsLogged(true)
   }

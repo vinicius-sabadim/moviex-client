@@ -2,9 +2,16 @@ import React, { useState } from 'react'
 
 import UserOptions from '../UserOptions'
 
+import User from '../../types/User'
+
 import './Header.css'
 
-const Header = ({ user, onLogout }) => {
+interface HeaderProps {
+  user: User
+  onLogout(): void
+}
+
+const Header: React.SFC<HeaderProps> = ({ user, onLogout }) => {
   const [isUserOptionsOpened, setUserOptionsOpened] = useState(false)
 
   return (

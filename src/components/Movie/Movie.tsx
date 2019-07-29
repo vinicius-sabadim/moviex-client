@@ -2,13 +2,20 @@ import React from 'react'
 
 import Rating from '../Rating'
 
+import Genre from '../../types/Genre'
+import MovieType from '../../types/Movie'
+
 import './Movie.css'
 
-const getGenres = genres => {
+const getGenres = (genres: [Genre]) => {
   return genres.map(genre => genre.name).join(', ')
 }
 
-const Movie = ({ movie }) => {
+interface MovieProps {
+  movie: MovieType
+}
+
+const Movie: React.SFC<MovieProps> = ({ movie }) => {
   return (
     <li className="movie__container">
       <img

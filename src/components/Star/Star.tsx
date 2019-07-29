@@ -2,11 +2,18 @@ import React from 'react'
 
 import './Star.css'
 
-const Star = ({
+interface StarProps {
+  color?: string
+  hasEffect?: boolean
+  style?: object
+  onClick?(): void
+}
+
+const Star: React.SFC<StarProps> = ({
   color = '#ccc',
   hasEffect = false,
   style = {},
-  onClick = () => {}
+  onClick
 }) => {
   return (
     <i
