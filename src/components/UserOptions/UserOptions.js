@@ -1,11 +1,11 @@
 import React from 'react'
 
-import styles from './UserOptions.styles'
+import './UserOptions.css'
 
 const UserOptions = ({ onLogout }) => {
   return (
-    <ul className={styles.container}>
-      <li className={styles.option} onClick={onLogout}>
+    <ul className="userOptions__container">
+      <li className="userOptions__option" onClick={onLogout}>
         Logout
       </li>
     </ul>

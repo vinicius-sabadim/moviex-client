@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import RatingPopup from './RatingPopup'
 import Star from '../Star'
 
-import styles from './Rating.styles'
+import './Rating.css'
 
 const Rating = () => {
   const [showPopup, setShowPopup] = useState(false)
@@ -14,23 +14,23 @@ const Rating = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.block}>
+    <div className="rating__container">
+      <div className="rating__block">
         <Star color="#FCCA46" />
-        <div className={styles.rateContainer}>
-          <span className={styles.rating}>9.8</span>
-          <span className={styles.total}>146</span>
+        <div className="rating__rateContainer">
+          <span className="rating__rating">9.8</span>
+          <span className="rating__total">146</span>
         </div>
       </div>
       <div
         id="rate-this-toggle"
-        className={styles.block}
+        className="rating__block"
         style={{ borderLeft: '1px solid #ccc', cursor: 'pointer' }}
         onClick={() => setShowPopup(true)}
       >
         <Star color="#ccc" />
-        <div className={styles.rateContainer}>
-          <span className={styles.total}>Rate this</span>
+        <div className="rating__rateContainer">
+          <span className="rating__total">Rate this</span>
         </div>
       </div>
       {showPopup && (

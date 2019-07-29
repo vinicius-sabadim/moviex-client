@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-import styles from './Login.styles'
+import './Login.css'
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('')
@@ -30,10 +30,10 @@ const Login = ({ onLogin }) => {
   }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.logo}>MovieX</h1>
+    <div className="loginPage__container">
+      <h1 className="loginPage__logo">MovieX</h1>
       <form onSubmit={e => handleLogin(e)}>
-        <div className={styles.formGroup}>
+        <div className="loginPage__formGroup">
           <label>E-mail</label>
           <input
             autoFocus
@@ -42,7 +42,7 @@ const Login = ({ onLogin }) => {
             onChange={e => setEmail(e.target.value)}
           />
         </div>
-        <div className={styles.formGroup}>
+        <div className="loginPage__formGroup">
           <label>Password</label>
           <input
             type="password"
@@ -51,13 +51,13 @@ const Login = ({ onLogin }) => {
           />
         </div>
         <button
-          className={styles.button}
+          className="loginPage__button"
           disabled={email === '' || password === ''}
         >
           Login
         </button>
       </form>
-      {hasError && <p className={styles.error}>{errorMessage}</p>}
+      {hasError && <p className="loginPage__error">{errorMessage}</p>}
     </div>
   )
 }

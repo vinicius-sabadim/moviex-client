@@ -1,5 +1,5 @@
 .header__container {
-  background-color: #fcfcfc;
+  background-color: var(--secondary-color);
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
@@ -8,17 +8,17 @@
 }
 
 .header__title {
-  color: var(--main-color);
+  color: var(--main-background);
 }
 
 .header__user {
   align-items: center;
+  color: var(--main-background);
   cursor: pointer;
   display: flex;
 }
 
 .header__userName {
-  color: var(--main-color);
   font-size: 18px;
   margin: 0 5px;
 }

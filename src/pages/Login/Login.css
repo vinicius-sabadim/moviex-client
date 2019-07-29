@@ -1,0 +1,46 @@
+.loginPage__container {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 340px;
+}
+
+.loginPage__logo {
+  margin-bottom: 20px;
+}
+
+.loginPage__formGroup {
+  margin-bottom: 10px;
+}
+
+.loginPage__formGroup > label {
+  display: block;
+  color: var(--main-color);
+  font-size: 14px;
+  padding-bottom: 3px;
+}
+
+.loginPage__formGroup > input {
+  font-size: 18px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.loginPage__button {
+  background-color: var(--secondary-color);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.5s;
+}
+
+.loginPage__button:hover {
+  opacity: 0.8;
+}
+
+.loginPage__error {
+  color: red;
+  font-size: 14px;
+  margin-top: 20px;
+}

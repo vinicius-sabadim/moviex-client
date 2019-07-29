@@ -1,0 +1,44 @@
+.ratingPopup__container {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px #ccc;
+  padding: 10px;
+  position: absolute;
+  right: 5px;
+  text-align: center;
+  top: -70px;
+  width: 360px;
+}
+
+.ratingPopup__buttonContainer {
+  border-top: 1px solid #ccc;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+
+.ratingPopup__button {
+  background-color: #fff;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 3px;
+  padding: 5px;
+}
+
+.ratingPopup__button-save {
+  color: var(--secondary-color);
+}
+
+.ratingPopup__button-save:hover {
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.ratingPopup__button-cancel {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.ratingPopup__button-cancel:hover {
+  border-bottom: 2px solid #aaa;
+}

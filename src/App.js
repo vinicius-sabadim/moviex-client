@@ -4,7 +4,7 @@ import axios from 'axios'
 import Home from './pages/Home'
 import Login from './pages/Login'
 
-import styles from './App.style'
+import './App.css'
 
 const App = () => {
   const [isInitialized, setIsInitialized] = useState(false)
@@ -48,7 +48,7 @@ const App = () => {
 
   if (!isInitialized) {
     return (
-      <div className={styles.center}>
+      <div className="app">
         <Loading />
       </div>
     )
@@ -59,7 +59,7 @@ const App = () => {
       {isLogged ? (
         <Home user={user} onLogout={handleLogout} />
       ) : (
-        <div className={styles.center}>
+        <div className="app">
           <Login onLogin={handleLogin} />
         </div>
       )}

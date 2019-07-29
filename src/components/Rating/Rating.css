@@ -1,0 +1,28 @@
+.rating__container {
+  bottom: 10px;
+  display: flex;
+  position: absolute;
+  right: 10px;
+}
+
+.rating__block {
+  align-items: center;
+  display: flex;
+  padding: 0 10px;
+  position: relative;
+}
+
+.rating__rateContainer {
+  margin-left: 8px;
+  text-align: center;
+}
+
+.rating__rating {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rating__total {
+  display: block;
+  font-size: 12px;
+}

@@ -1,0 +1,17 @@
+.userOptions__container {
+  background-color: #fff;
+  bottom: -40px;
+  box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  right: 20px;
+  width: 100px;
+}
+
+.userOptions__option {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.userOptions__option:hover {
+  background-color: #eee;
+}
