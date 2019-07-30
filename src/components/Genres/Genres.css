@@ -1,0 +1,47 @@
+.genres__container {
+  background-color: var(--main-color);
+  grid-area: side;
+  height: 100vh;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+.genres__container > h3 {
+  padding: 40px 10px 10px;
+}
+
+.genres__listItem {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-size: 22px;
+  padding: 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .genres__container {
+    background-color: #fff;
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.4);
+    height: fit-content;
+    margin-top: 30px;
+    overflow: auto;
+    padding-right: 50px;
+    position: static;
+    text-align: left;
+    width: fit-content;
+  }
+
+  .genres__container > h3 {
+    padding: 10px 20px;
+  }
+
+  .genres__listItem {
+    border-bottom: none;
+    color: var(--main-color);
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}

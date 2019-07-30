@@ -2,6 +2,7 @@
   background-color: var(--secondary-color);
   border-bottom: 1px solid #ccc;
   display: flex;
+  height: 58px;
   justify-content: space-between;
   padding: 10px 20px;
   position: relative;

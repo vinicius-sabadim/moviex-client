@@ -6,7 +6,7 @@ A place for you to track and engage on your passion for movies.
 
 #### Genres
 
-- [ ] Show the genres in a menu
+- [x] Show the genres in a menu
 - [ ] Filter movies based in a genre
 
 #### Lists

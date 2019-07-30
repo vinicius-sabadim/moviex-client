@@ -1,0 +1,20 @@
+.homePage__container {
+  display: grid;
+  grid-template-areas: 'search' 'side' 'main';
+}
+
+.homePage__main {
+  grid-area: main;
+}
+
+@media screen and (min-width: 1024px) {
+  .homePage__container {
+    grid-template-areas: 'search .' 'main side';
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .homePage__container {
+    grid-template-areas: 'search . .' 'main main side';
+  }
+}
