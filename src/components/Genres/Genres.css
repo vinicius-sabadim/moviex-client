@@ -21,17 +21,15 @@
   padding: 10px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 769px) {
   .genres__container {
     background-color: #fff;
     box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.4);
     height: fit-content;
     margin-top: 30px;
     overflow: auto;
-    padding-right: 50px;
     position: static;
     text-align: left;
-    width: fit-content;
   }
 
   .genres__container > h3 {
