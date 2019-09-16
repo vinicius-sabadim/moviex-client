@@ -15,8 +15,9 @@
 
 @media screen and (min-width: 1024px) {
   .homePage__container {
+    grid-gap: 20px;
     grid-template-columns: auto auto 200px;
-    grid-template-areas: 'search . .' 'main main side';
+    grid-template-areas: 'search search search' 'main main side';
     margin: 20px;
   }
 }

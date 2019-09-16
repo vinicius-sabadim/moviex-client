@@ -26,7 +26,6 @@
     background-color: #fff;
     box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.4);
     height: fit-content;
-    margin-top: 30px;
     overflow: auto;
     position: static;
     text-align: left;
@@ -37,9 +36,17 @@
   }
 
   .genres__listItem {
-    border-bottom: none;
+    border-bottom: 1px solid #ccc;
     color: var(--main-color);
+    cursor: pointer;
     font-size: 16px;
     padding: 10px 20px;
+    transition: padding 0.5s;
+  }
+
+  .genres__listItem:hover {
+    background-color: var(--main-color);
+    color: white;
+    padding-left: 30px;
   }
 }
