@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import Genres from '../../components/Genres'
-import Header from '../../components/Header'
 import MovieList from '../../components/MovieList'
 import Search from '../../components/Search'
 
 import Movie from '../../types/Movie'
-import User from '../../types/User'
 
 import './Home.css'
 
@@ -39,17 +37,11 @@ const useMovies = () => {
   return { isSearching, movies, fetchMovies }
 }
 
-interface HomeProps {
-  user: User
-  onLogout(): void
-}
-
-const Home: React.SFC<HomeProps> = ({ user, onLogout }) => {
+const Home: React.SFC = () => {
   const { isSearching, movies, fetchMovies } = useMovies()
 
   return (
     <React.Fragment>
-      <Header user={user} onLogout={onLogout} />
       <div className="homePage__container">
         <Search isSearching={isSearching} onSearch={fetchMovies} />
         <div className="homePage__main">

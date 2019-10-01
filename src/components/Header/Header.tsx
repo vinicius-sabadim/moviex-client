@@ -2,17 +2,13 @@ import React, { useState } from 'react'
 
 import UserOptions from '../UserOptions'
 
-import User from '../../types/User'
+import { useAuthState } from '../../contexts/Auth'
 
 import './Header.css'
 
-interface HeaderProps {
-  user: User
-  onLogout(): void
-}
-
-const Header: React.SFC<HeaderProps> = ({ user, onLogout }) => {
+const Header: React.SFC = () => {
   const [isUserOptionsOpened, setUserOptionsOpened] = useState(false)
+  const { user } = useAuthState()
 
   return (
     <div className="header__container">
@@ -21,10 +17,12 @@ const Header: React.SFC<HeaderProps> = ({ user, onLogout }) => {
         className="header__user"
         onClick={() => setUserOptionsOpened(!isUserOptionsOpened)}
       >
-        <span className="header__userName">Vinicius</span>
+        <span className="header__userName">{user ? 'Vinicius' : 'Login'}</span>
         <i className="fa fa-caret-down" />
       </div>
-      {isUserOptionsOpened && <UserOptions onLogout={onLogout} />}
+      {isUserOptionsOpened && (
+        <UserOptions closeUserOptions={() => setUserOptionsOpened(false)} />
+      )}
     </div>
   )
 }

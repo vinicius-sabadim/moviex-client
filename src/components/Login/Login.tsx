@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-import User from '../../types/User'
+import { useAuthState } from '../../contexts/Auth'
 
 import './Login.css'
 
-interface LoginProps {
-  onLogin(user: User): void
+interface LoginInterface {
+  closeUserOptions: () => void
 }
 
-const Login: React.SFC<LoginProps> = ({ onLogin }) => {
+const Login: React.FC<LoginInterface> = ({ closeUserOptions }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [hasError, setHasError] = useState(false)
+
+  const { setUser } = useAuthState()
 
   const handleLogin = async (event: React.SyntheticEvent) => {
     event.preventDefault()
@@ -28,7 +30,8 @@ const Login: React.SFC<LoginProps> = ({ onLogin }) => {
         }
       )
       const { user } = data
-      onLogin(user)
+      setUser(user)
+      closeUserOptions()
     } catch ({ response }) {
       setHasError(true)
       setErrorMessage(response.data.errors)
@@ -37,7 +40,6 @@ const Login: React.SFC<LoginProps> = ({ onLogin }) => {
 
   return (
     <div className="loginPage__container">
-      <h1 className="loginPage__logo">MovieX</h1>
       <form onSubmit={handleLogin}>
         <div className="loginPage__formGroup">
           <label>E-mail</label>
