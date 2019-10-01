@@ -8,26 +8,9 @@
   margin-bottom: 10px;
 }
 
-.loginPage__formGroup > label {
-  display: block;
-  color: var(--main-color);
-  font-size: 14px;
-  padding-bottom: 3px;
-}
-
-.loginPage__formGroup > input {
-  font-size: 18px;
-  padding: 5px 10px;
-  width: 100%;
-}
-
 .loginPage__button {
   background-color: var(--secondary-color);
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  padding: 10px;
-  transition: all 0.5s;
+  border-radius: 8px;
 }
 
 .loginPage__button:hover {
@@ -35,7 +18,7 @@
 }
 
 .loginPage__error {
-  color: red;
+  color: var(--error-color);
   font-size: 14px;
   margin-top: 20px;
 }

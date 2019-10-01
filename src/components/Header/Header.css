@@ -1,5 +1,5 @@
 .header__container {
-  background-color: var(--secondary-color);
+  background-color: var(--main-color);
   border-bottom: 1px solid #ccc;
   display: flex;
   height: 58px;
@@ -9,12 +9,12 @@
 }
 
 .header__title {
-  color: var(--main-background);
+  color: var(--light-color);
 }
 
 .header__user {
   align-items: center;
-  color: var(--main-background);
+  color: var(--light-color);
   cursor: pointer;
   display: flex;
 }
