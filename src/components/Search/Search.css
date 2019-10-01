@@ -1,12 +1,12 @@
 .search__container {
+  display: flex;
   grid-area: search;
-  text-align: center;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 600px) {
   .search__container {
-    display: flex;
-    text-align: left;
+    margin: 0;
   }
 }
 

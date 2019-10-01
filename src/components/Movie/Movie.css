@@ -1,6 +1,7 @@
 .movie__container {
   align-items: flex-start;
   background-color: #ffffff;
+  border-radius: 8px;
   box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
@@ -15,7 +16,7 @@
 
 .movie__image {
   display: block;
-  margin: 20px auto 0;
+  margin: 0 auto;
   object-fit: contain;
 }
 
@@ -27,19 +28,21 @@
 
 .movie__info {
   margin-bottom: 50px;
+  text-align: center;
   padding: 15px;
 }
 
 @media screen and (min-width: 600px) {
   .movie__info {
     margin-bottom: 0;
+    text-align: left;
   }
 }
 
 .movie__title {
   border-bottom: 1px solid #eeeeee;
   font-size: 18px;
-  padding: 0 40px 5px 0;
+  padding-bottom: 5px;
 }
 
 .movie__items {

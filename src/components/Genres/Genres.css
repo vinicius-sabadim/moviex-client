@@ -1,17 +1,18 @@
 .genres__container {
   background-color: var(--main-color);
+  display: none;
   grid-area: side;
   height: 100vh;
-  left: 0;
   overflow-y: scroll;
-  position: fixed;
   text-align: center;
-  top: 0;
   width: 100%;
 }
 
 .genres__container > h3 {
-  padding: 40px 10px 10px;
+  color: var(--light-color);
+  font-size: 32px;
+  font-weight: 700;
+  padding: 20px 10px 10px;
 }
 
 .genres__listItem {
@@ -25,6 +26,7 @@
   .genres__container {
     background-color: #fff;
     box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.4);
+    display: block;
     height: fit-content;
     overflow: auto;
     position: static;
@@ -32,6 +34,8 @@
   }
 
   .genres__container > h3 {
+    color: var(--dark-color);
+    font-size: 18px;
     padding: 10px 20px;
   }
 
